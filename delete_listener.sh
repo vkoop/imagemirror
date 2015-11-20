@@ -1,7 +1,7 @@
 BASEDIR=$(dirname $0)
 source "$BASEDIR/config.sh"
 
-inotifywait -r -e delete -m --format "%w%f" "$SRC" | while read file; do 
+inotifywait -r -e delete,moved_from -m --format "%w%f" "$SRC" | while read file; do 
 	NEW_FILE=${file/$SRC/$TRG}
 	echo "trying delete: $NEW_FILE"
 	if [[ -f $NEW_FILE ]]; then
