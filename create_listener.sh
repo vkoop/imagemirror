@@ -1,8 +1,6 @@
 BASEDIR=$(dirname $0)
 source "$BASEDIR/config.sh" 
 
-#| grep -i -P ".*jpe?g" --line-buffered | 
-
 inotifywait -r -e close_write --exclude '(\.sync)' -m --format "%w%f" "$SRC" | while read file; do 
 	NEW_FILE=${file/$SRC/$TRG};
 	NEW_FOLDER=${NEW_FILE%/*};
