@@ -15,7 +15,7 @@ find "$SRC" -iname "*.jpg" -print0 | while IFS= read -r -d '' file; do
 	fi
 
 	if [[ ! -f $NEW_FILE ]]; then
-        	echo "convert '$file' -resize 1500x1500 -quality 30 '$NEW_FILE'; echo 'converted: $file';" >> jobs	
+    	echo "convert '$file' -resize 1500x1500 -quality 30 '$NEW_FILE'; echo 'converted: $file';" >> jobs	
 	fi
 done
 
