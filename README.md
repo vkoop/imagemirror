@@ -7,6 +7,7 @@ Watch image directory and create mirrored folder structure with minified image v
 - setup cronjob to start the watchers at startup
   - add file /etc/cron.d/image_watcher
   - add the following line to the created file:
+
 ```
 @reboot root bash -C PATH_TO_SCRIPT_FOLDER/register_listener.sh
 ``` 
